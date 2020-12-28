@@ -44,6 +44,7 @@
     "jest-circus": "26.6.0",
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
+    "lint-staged": "^10.5.3",
     "mini-css-extract-plugin": "0.11.3",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
@@ -80,27 +81,33 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "styleguide": "styleguidist server",
-    "stylrguide": "styleguidest build",
+    "styleguide": "styleguidest build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "https:start": "HTTPS=true react-scripts start"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
+  "lint-staged":{
+    "src/**/*.{js,jsx,ts,tsx,json,css,less,scss,md}":[
+    "prettier --write"
+    ]
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ],
-    "rules": {
-      "additional-rule": "warn"
-    },
+    "rules": {},
     "overrides": [
       {
         "files": [
           "**/*.ts?(x)"
         ],
-        "rules": {
-          "additional-typescript-only-rule": "warn"
-        }
+        "rules": {}
       }
     ]
   },
@@ -178,6 +185,7 @@
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
     "@storybook/react": "^6.1.11",
-    "prettier": "2.2.1"
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1"
   }
 }
