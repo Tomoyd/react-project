@@ -1,4 +1,4 @@
-import { ComponentType, lazy, LazyExoticComponent } from 'react';
+import { ComponentType } from 'react';
 
 interface routeEntity {
     name: string;
