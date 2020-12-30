@@ -1,0 +1,50 @@
+.modal {
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(33, 33, 33, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: fadeInDown 0.3s ease-in-out;
+    animation: fadeInDown 0.3s ease-in-out;
+}
+
+.modalContainer {
+    margin: 0 20px 60px;
+    width: 100%;
+    background-color: #fff;
+}
+.hidden {
+    animation: modalFadeOut 0.3s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translate3d(0, 100%, 0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.fadeLogIn {
+    -webkit-animation: fadeLogIn 0.4s;
+    animation: fadeLogIn 0.4s;
+}
+
+@keyframes fadeLogIn {
+    100% {
+        -webkit-transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+}
