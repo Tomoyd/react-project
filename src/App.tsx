@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from '../store';
 import './App.css';
 import routes from './router';
-import PageContext from './store';
 
 function App() {
     return (

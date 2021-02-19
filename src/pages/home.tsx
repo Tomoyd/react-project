@@ -1,26 +1,28 @@
 import React from 'react';
+import { useStoreData } from '../../store';
 import GlobalModal, { useModal } from '../component/GlobalModal';
 import Layout from '../component/Layout';
-import useStore from '../hooks/useStore';
+// import useStore from '../hooks/useStore';
 
 const Home: React.FC = () => {
-    const [state, setStoreState] = useStore('home');
-    const [showModal, hiddenModal] = useModal('test');
+    const [homeState, setData] = useStoreData('home');
+    // const [showModal, hiddenModal] = useModal('test');
     return (
         <Layout title="主页">
             <GlobalModal modalKey="test">
                 <div>hello</div>
-                <div onClick={hiddenModal}>hidden modal</div>
             </GlobalModal>
             <div
                 onClick={() => {
                     console.log('123 :>> ', 123);
-                    showModal();
-                    setStoreState('home 999');
+                    // showModal();
+                    setData(333);
+                    // setStoreState('home 999');
                 }}
             >
-                {state}
+                click
             </div>
+            <div>{homeState}</div>
         </Layout>
     );
 };
