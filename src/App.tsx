@@ -1,5 +1,7 @@
 import { lazy, Suspense } from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import store from '../store';
 import './App.css';
 import routes from './router';
 import PageContext from './store';
@@ -7,7 +9,7 @@ import PageContext from './store';
 function App() {
     return (
         <Suspense fallback={null}>
-            <PageContext>
+            <Provider store={store}>
                 <div className="App">
                     <Router>
                         <Switch>
@@ -23,7 +25,7 @@ function App() {
                         </Switch>
                     </Router>
                 </div>
-            </PageContext>
+            </Provider>
         </Suspense>
     );
 }
